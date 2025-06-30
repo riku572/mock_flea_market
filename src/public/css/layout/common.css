@@ -1,0 +1,82 @@
+/* 基本スタイル */
+.header {
+    background-color: #000;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+}
+
+.header_inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header_logo img {
+    height: 40px;
+}
+
+.header-form {
+    flex: 1;
+    max-width: 400px;
+    padding: 8px 12px;
+    margin: 0 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-logout,
+.button-mypage,
+.button-sell {
+    margin-left: 10px;
+    padding: 8px 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.button-logout:hover,
+.button-mypage:hover,
+.button-sell:hover {
+    background-color: #0056b3;
+}
+
+/* PC：1400px〜1540px */
+@media (min-width: 1400px) and (max-width: 1540px) {
+    .header_inner {
+        padding: 0 30px;
+    }
+
+    .header-form {
+        max-width: 500px;
+    }
+}
+
+/* タブレット：768px〜850px */
+@media (min-width: 768px) and (max-width: 850px) {
+    .header_inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-form {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .button-logout,
+    .button-mypage,
+    .button-sell {
+        width: 100%;
+        margin: 5px 0 0 0;
+    }
+}
