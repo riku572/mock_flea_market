@@ -30,3 +30,6 @@ DB_PASSWORD=laravel_pass
 name: テスト
 email: tesuto@gmail.com
 password: password
+
+## URL
+・開発環境：http://localhost
