@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="{{ asset('css/mypage/edit.css') }}">
 @endsection
 
 @section('content')
@@ -12,13 +12,17 @@
         @csrf
         @method('PUT')
 
-        <div class="form-group">
+        <div class="form-group image-upload-group">
             @if(Auth::user()->profile_image)
                 <img src="{{ asset('storage/' . Auth::user()->profile_image) }}" alt="プロフィール画像" class="profile-preview">
             @else
                 <div class="profile-placeholder"></div>
             @endif
-            <input type="file" name="profile_image" id="profile_image">
+            
+            <div class="form-group file-upload-inline">
+                <label for="profile_image" class="custom-file-label">画像を選択する</label>
+                <input type="file" name="profile_image" id="profile_image" class="custom-file-input-hidden">
+            </div>
         </div>
 
         <div class="form-group">

@@ -15,6 +15,9 @@
         </a>
     </div>
 </div>
+
+<hr class="section-divider">
+
 <div class="product-list" id="product-list">
     @include('components.product_list', ['products' => $products])
 </div>

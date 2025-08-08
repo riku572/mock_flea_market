@@ -1,0 +1,90 @@
+.address-section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.address-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.address-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    background-color: red;
+    color:white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #b40027;
+}
+
+
+@media (max-width: 850px) and (min-width: 768px) {
+    .address-section {
+        padding: 0 30px;
+    }
+
+    .address-title {
+        font-size: 1.6rem;
+    }
+
+    .submit-btn {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1540px) {
+    .address-section {
+        max-width: 800px;
+    }
+
+    .submit-btn {
+        font-size: 1.1rem;
+        padding: 14px 40px;
+    }
+}

@@ -6,6 +6,7 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +24,21 @@ Route::get('/', [ItemController::class, 'index'])->name('items.index');
 Route::get('/search', [ItemController::class, 'search'])->name('items.search');
 
 // 商品詳細ページ
-Route::get('/items/{id}', [ItemController::class, 'show'])->name('items.show');
-Route::post('/items/{id}/like', [ItemController::class, 'like'])->middleware('auth')->name('items.like');
-Route::post('/items/{Id}/comment', [ItemController::class, 'comment'])->middleware('auth')->name('items.comment');
+Route::get('/items/{product}', [ItemController::class, 'show'])->name('items.show');
+Route::post('/items/{product}/like', [ItemController::class, 'like'])->middleware('auth')->name('items.like');
+Route::post('/items/{product}/comment', [ItemController::class, 'comment'])->middleware('auth')->name('items.comment');
 
-// 商品購入確認ページ (GET) + 購入処理 (POST)
-Route::get('/purchase/confirm', [PurchaseController::class, 'confirm'])->name('purchase.confirm');
-Route::post('/purchase/confirm', [PurchaseController::class, 'store'])->name('purchase.store');
-Route::post('/purchase/{product}/execute', [PurchaseController::class, 'execute'])->name('purchase.execute');
+// 購入確認～住所変更
+Route::middleware('auth')->group(function () {
+    Route::get('/purchase/confirm', [PurchaseController::class, 'confirm'])->name('purchase.confirm');
+    Route::get('/purchase/address', [PurchaseController::class, 'changeAddress'])->name('purchase.address');
+    Route::post('/purchase/address/update', [PurchaseController::class, 'updateAddress'])->name('purchase.updateAddress');
 
-// 送付先住所変更ページ (GET) + 変更保存 (POST)
-Route::get('/purchase/address', [PurchaseController::class, 'changeAddress'])->name('purchase.address');
-Route::post('/purchase/address', [PurchaseController::class, 'updateAddress'])->name('address.update');
+    // Stripe支払い関連
+    Route::post('/purchase/checkout', [PaymentController::class, 'checkout'])->name('purchase.checkout');
+    Route::get('/purchase/success', [PaymentController::class, 'success'])->name('purchase.success');
+    Route::get('/purchase/cancel', [PaymentController::class, 'cancel'])->name('purchase.cancel');
+});
 
 // 商品出品ページ (GET) + 出品処理 (POST)
 Route::get('/sell/create', [SellController::class, 'create'])->name('sell.create');
@@ -46,5 +50,3 @@ Route::post('/mypage/setup', [MypageController::class, 'setup'])->name('mypage.s
 Route::get('/mypage', [MypageController::class, 'index'])->name('mypage.index');
 Route::get('/mypage/edit', [MypageController::class, 'edit'])->name('mypage.edit');
 Route::put('/mypage/update', [MypageController::class, 'update'])->name('mypage.update');
-
-// ログインページ

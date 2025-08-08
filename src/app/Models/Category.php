@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Category extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = ['name'];
 
     public function products(): BelongsToMany

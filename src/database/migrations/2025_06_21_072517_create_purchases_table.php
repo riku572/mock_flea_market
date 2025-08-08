@@ -17,6 +17,9 @@ class CreatePurchasesTable extends Migration
             $table->bigIncrements('id');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->string('payment_method');
+            $table->string('shipping_address')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

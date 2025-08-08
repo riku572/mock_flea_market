@@ -22,11 +22,13 @@
         </a>
     </div>
 
+    <hr class="tab-divider">
+
     @if ($tab === 'selling')
         <div class="product-grid">
             @forelse ($products as $product)
                 <div class="product-card">
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="商品画像" class="product-image">
+                    <img src="{{ Storage::url($product->image) }}" alt="商品画像" class="product-image">
                     <p class="product-name">{{ $product->name }}</p>
                 </div>
             @empty
@@ -37,7 +39,7 @@
         <div class="product-grid">
             @forelse ($purchases as $purchase)
                 <div class="product-card">
-                    <img src="{{ asset('storage/' . $purchase->image) }}" alt="商品画像" class="product-image">
+                    <img src="{{ Storage::url($purchase->image) }}" alt="商品画像" class="product-image">
                     <p class="product-name">{{ $purchase->name }}</p>
                 </div>
             @empty

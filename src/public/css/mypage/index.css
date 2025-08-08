@@ -1,30 +1,141 @@
-.product-grid {
+.mypage-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.profile-info {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 16px;
+    text-align: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.profile-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    background-color: #ccc;
+}
+
+.profile-info p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile-info a {
+    padding: 8px 16px;
+    line-height: 1.2;
+    border: 1px solid #e3342f;
+    color: #e3342f;
+    background-color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: auto;
+    vertical-align: middle;
+}
+
+.profile-info a:hover {
+    background-color: #f8d7da;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tab-button {
+    color: #333;
+    text-decoration: none;
+}
+
+.tab-button.active {
+    color: #e3342f;
+}
+
+.tab-separator {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .product-card {
-    width: 150px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 8px;
     text-align: center;
-    background-color: #fff;
 }
 
 .product-image {
     width: 100%;
-    height: 150px;
+    border-radius: 10px;
     object-fit: cover;
-    border-radius: 4px;
+    aspect-ratio: 1 / 1;
 }
 
 .product-name {
     margin-top: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
+    font-size: 16px;
+}
+
+.tab-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0 20px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .profile-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-info a {
+        margin-left: 0;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tab-buttons {
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .profile-info img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-info p {
+        font-size: 18px
+    }
+
+    .tab-buttons {
+        font-size: 15px;
+    }
 }

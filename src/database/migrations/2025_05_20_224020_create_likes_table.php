@@ -17,7 +17,7 @@ class CreateLikesTable extends Migration
             $table->bigIncrements('id');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
         });
     }
 

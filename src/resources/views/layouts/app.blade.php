@@ -45,7 +45,7 @@
                     <a class="button-sell" href="{{ route('sell.create') }}">出品</a>
 
                 @else
-                    <a class="button-logout" href="{{ route('login') }}">ログイン</a>
+                    <a class="button-login" href="{{ route('login') }}">ログイン</a>
                 @endif
             @endif
         </div>

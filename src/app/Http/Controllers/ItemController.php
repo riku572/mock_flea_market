@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\Like;
 use App\Models\Comment;
 use App\Models\Category;
-use App\Http\Requests\StoreCommentRequest;
+use App\Http\Requests\CommentRequest;
 
 class ItemController extends Controller
 {
@@ -89,7 +89,7 @@ class ItemController extends Controller
             'image' => ['nullable', 'image', 'max:2048'],
         ]);
 
-        $item = new Item($validated);
+        $item = new Product($validated);
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('items', 'public');

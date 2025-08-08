@@ -1,0 +1,204 @@
+.product-detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.product-detail-card {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+.product-detail-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-detail-content {
+    flex: 2 1 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.product-detail-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.product-detail-brand-name {
+    font-size: 0.9rem;
+    color: #000;
+}
+.product-detail-price,
+.product-detail-description,
+.product-information p {
+    font-size: 1rem;
+}
+
+.tax-label {
+    font-size: 0.85rem;
+    color: #000;
+}
+
+.like-comment-purchase {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.like-comment-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.comment-count {
+    font-size: 1.2rem;
+}
+
+.purchase-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f87171;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.product-description-card,
+.product-comment-card {
+    margin-top: 1.5rem;
+}
+
+.product-description-title,
+.product-comment-card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-comment {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.comment-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comment-user-image {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.comment-header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.comment-user-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.comment-content {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.product-comment-button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border:none;
+    background-color: #f87171;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.comment-user {
+    font-weight: bold;
+}
+
+.comment-content {
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 850px) {
+    .product-detail-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-detail-image {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .product-detail-content {
+        width: 100%;
+    }
+
+    .like-comment-purchase {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1540px) {
+    .product-detail-container {
+        padding: 3rem;
+    }
+}

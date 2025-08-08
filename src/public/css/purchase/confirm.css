@@ -1,101 +1,166 @@
-.purchase-container {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 1.5rem;
+.purchase-confirm {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
 .purchase-main {
     display: flex;
+    gap: 30px;
     flex-wrap: wrap;
-    gap: 1.5rem;
 }
 
 .purchase-left {
-    flex: 2;
+    flex: 1;
+    min-width: 300px;
+}
+
+.purchase-right-with-button {
+    flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 }
 
 .purchase-right {
-    flex: 1;
-    min-width: 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.product-info img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.product-text p {
+    margin: 6px 0;
+    font-size: 1.1rem;
 }
 
 .purchase-box {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.purchase-heading-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .purchase-heading {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: #000;
 }
 
-.purchase-image {
-    width: 12rem;
-    height: auto;
-    margin-bottom: 0.5rem;
-}
-
-.purchase-select {
+#payment_method {
     width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 0.375rem;
 }
 
-.purchase-summary {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.purchase-summary-box {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.purchase-summary-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid #ddd;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.purchase-summary-heading {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.purchase-summary-item:last-child {
+    border-bottom: none;
+}
+
+.purchase-summary p {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#selected-method {
+    font-weight: bold;
+    color: #000;
+}
+
+.purchase-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.purchase-button-container form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .purchase-button {
-    width: 100%;
-    background-color: #2563eb;
+    background-color: red;
     color: white;
-    padding: 0.5rem 0;
-    border-radius: 0.375rem;
-    transition: background-color 0.2s;
-    border:  none;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
+    width: 100%;
+    max-width: 300px;
 }
 
 .purchase-button:hover {
-    background-color: #1d4ed8;
+    background-color: #b40027;
 }
 
-.purchase-link {
-    color: #2563eb;
-    text-decoration: underline;
-}
 
-.purchase-link:hover {
-    color: #1d4ed8;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .purchase-main {
         flex-direction: column;
     }
 
-    .purchase-left,
-    .purchase-right {
-        max-width: 100%;
+    .product-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-info img {
+        width: 100%;
+        height: auto;
+    }
+
+    .purchase-button-container {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1540px) {
+    .purchase-confirm {
+        max-width: 1100px;
+    }
+
+    .product-info img {
+        width: 180px;
+        height: 180px;
     }
 }

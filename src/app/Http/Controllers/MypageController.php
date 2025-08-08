@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Profile;
 
 class MypageController extends Controller
@@ -40,7 +41,7 @@ class MypageController extends Controller
         $profile->building_name = $request->input('building_name');
 
         if ($request->hasFile('image_path')) {
-            $path = $request->file('image_path')->store('profile_images', 'public');
+            $path = $request->file('image_path')->store('images', 'public');
             $profile->image_path = $path;
         }
 

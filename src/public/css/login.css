@@ -1,19 +1,17 @@
 /* 全体のフォームコンテナ */
 .login-form {
   max-width: 400px;
-  margin: 80px auto;
-  padding: 30px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 60px auto 0 auto;
+  padding: 0 20px;
   font-family: 'Helvetica Neue', sans-serif;
 }
 
 /* 見出し */
 .login-form_heading {
   font-size: 24px;
+  font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 /* フォーム全体 */
@@ -42,6 +40,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
+  box-sizing: border-box;
   transition: border-color 0.3s;
 }
 
@@ -59,17 +58,18 @@
 
 /* ログインボタン */
 .login-form_login_botton {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
 }
 
 .login-form_login_botton_botton {
-  background-color: #4a90e2;
+  background-color: #e74c3c;
   color: white;
-  padding: 12px 30px;
+  width: 100%;
+  padding: 12px 0;
   border: none;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -80,7 +80,7 @@
 
 /* 会員登録リンク */
 .register-link {
-  margin-top: 20px;
+  margin-top: 25px;
   text-align: center;
 }
 
@@ -92,4 +92,21 @@
 
 .register-link_botton:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-form {
+    margin: 40px 20px;
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  .login-form_heading {
+    font-size: 20px;
+  }
+
+  .login-form_login_botton_botton {
+    font-size: 14px;
+    padding: 10px 0;
+  }
 }
